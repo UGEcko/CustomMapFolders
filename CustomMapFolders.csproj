@@ -54,6 +54,11 @@
         <Reference Include="$(ChroMapperDir)\ChroMapper_Data\Managed\Main.dll" Publicize="true" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="manifest.json" />
+      <EmbeddedResource Include="manifest.json" />
+    </ItemGroup>
+
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
         <Exec Command="xcopy /Y &quot;$(TargetDir)CustomMapFolders.dll&quot; &quot;$(ChroMapperDir)\Plugins&quot;" />
     </Target>
