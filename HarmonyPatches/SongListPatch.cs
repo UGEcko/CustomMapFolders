@@ -28,7 +28,7 @@ public class SongListPatch : MonoBehaviour
         button.onClick.AddListener(() =>
         {
             // Init CMUI to ask for folder details.
-            DialogBox UI = PersistentUI.Instance.CreateNewDialogBox().WithTitle("Create new folder");
+            DialogBox UI = PersistentUI.Instance.CreateNewDialogBox().WithTitle("Create New Custom Folder");
             
             var name = UI.AddComponent<TextBoxComponent>()
                 .WithLabel("Name");
