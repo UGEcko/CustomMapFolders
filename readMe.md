@@ -2,13 +2,14 @@
 A plugin for ChroMapper that adds custom map folders in the song selector menu!
 
 ## Installation
-1) Install the latest version of CMF in releases and put it in your ``Plugins`` folder.
+1) Install the latest version of CMF in [releases](github.com/UGEcko/CustomMapFolders/releases/latest) and put it in your ``Plugins`` folder.
 2) Run ChroMapper atleast once.
 
 
 ## Usage 
 Using CMF is really simple. The plugin adds a new ``+`` button where you see your map folders. Clicking this will show a UI to create a new Custom Map Folder.
 <br>
+
 Provide atleast the name of the folder (What the button will show), and a valid maps folder path. You can also change the color of the text!
 <br>
 Now the folder will show all valid songs in the directory you provided!
