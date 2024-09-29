@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>10</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="0Harmony">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\0Harmony.dll</HintPath>
+      </Reference>
+      <Reference Include="Mono.Cecil">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\Mono.Cecil.dll</HintPath>
+      </Reference>
+      <Reference Include="Newtonsoft.Json">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      </Reference>
+      <Reference Include="Plugins">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\Plugins.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.Localization">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\Unity.Localization.dll</HintPath>
+      </Reference>
+      <Reference Include="Unity.TextMeshPro">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.ImageConversionModule">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.InputLegacyModule">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.LocalizationModule">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\UnityEngine.UI.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.UIModule">
+        <HintPath>..\..\..\..\EverythingSaber\Editors\ChromapperV0.10\chromapper\ChroMapper_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="System.Memory" Version="4.5.5" />
+        <Reference Include="$(ChroMapperDir)\ChroMapper_Data\Managed\Main.dll" Publicize="true" />
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="xcopy /Y &quot;$(TargetDir)CustomMapFolders.dll&quot; &quot;$(ChroMapperDir)\Plugins&quot;" />
+    </Target>
+
+</Project>
