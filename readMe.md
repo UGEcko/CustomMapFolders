@@ -1,5 +1,5 @@
 ﻿# Custom Map Folders (ChroMapper Plugin)
-A plugin for ChroMapper that adds custom map folders in the song selector menu!
+A plugin for ChroMapper that lets you add custom map folders in the song selector menu!
 
 ![image](https://github.com/user-attachments/assets/94a3480c-936d-4913-8808-27aa0a3682fd)
 
